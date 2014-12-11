@@ -1,0 +1,37 @@
+apertium-en-ca (0.9.3+svn~57977-1) trusty; urgency=low
+
+  [ Kartik Mistry ]
+  * Rebuilt for Trusty.
+
+  [ Tino Didriksen ]
+  * New upstream release
+  * Significant changes in svn since tarball, so mixing new build scripts with
+    old data files
+  * Re-done packaging to take advantage of debhelper 9
+
+ -- Kartik Mistry <kartik@debian.org>  Thu, 11 Dec 2014 17:37:40 +0530
+
+apertium-en-ca (0.8.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Added dependency on apertium-pcre2
+
+ -- Francis Tyers <ftyers@prompsit.com>  Fri, 27 Mar 2009 11:27:13 +0000
+
+apertium-en-ca (0.8.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Francis Tyers <ftyers@prompsit.com>  Wed, 19 Mar 2008 13:50:02 +0000
+
+apertium-en-ca (0.8.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Francis Tyers <ftyers@prompsit.com>  Fri, 07 Dec 2007 14:25:08 +0000
+
+apertium-en-ca (0.8.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #418544)
+
+ -- Francis Tyers <ftyers@prompsit.com>  Thu, 04 Oct 2007 14:24:41 +0100
