@@ -1,7 +1,21 @@
-apertium-en-ca (0.9.3+svn~57977-1) trusty; urgency=low
+apertium-en-ca (0.9.3~r61328-2+wmf1) jessie-wikimedia; urgency=low
 
-  [ Kartik Mistry ]
-  * Rebuilt for Trusty.
+  * Rebuild for Jessie.
+
+ -- Kartik Mistry <kartik@debian.org>  Tue, 14 Jun 2016 13:22:19 +0530
+
+apertium-en-ca (0.9.3~r61328-2) unstable; urgency=low
+
+  * debian/control:
+    + Do not depends on locales
+    + Updated Standards-Version to 3.9.8
+    + Fixed Vcs-Git URL
+  * debian/rules:
+    + Simplified rules file after removing locales dependency.
+
+ -- Kartik Mistry <kartik@debian.org>  Tue, 14 Jun 2016 13:08:38 +0530
+
+apertium-en-ca (0.9.3~r61328-1) unstable; urgency=low
 
   [ Tino Didriksen ]
   * New upstream release
@@ -9,7 +23,7 @@ apertium-en-ca (0.9.3+svn~57977-1) trusty; urgency=low
     old data files
   * Re-done packaging to take advantage of debhelper 9
 
- -- Kartik Mistry <kartik@debian.org>  Thu, 11 Dec 2014 17:37:40 +0530
+ -- Kartik Mistry <kartik@debian.org>  Thu, 09 Jul 2015 19:31:49 +0530
 
 apertium-en-ca (0.8.9-1) unstable; urgency=low
 
