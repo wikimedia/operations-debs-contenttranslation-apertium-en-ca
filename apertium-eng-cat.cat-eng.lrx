@@ -1,0 +1,186 @@
+<rules>
+  <!-- 
+    This rule chooses "energía" as the translation of "power" when it is preceded by "wind". 
+    Add your own rules within <rule> here, using the resources below as a guide 
+  -->
+
+  <rule weight="1.0">
+    <or>    
+      <match lemma="persona" tags="n.*"/>
+    </or>
+    <match lemma="gran" tags="adj.*">
+      <select lemma="elder" tags="adj.*" />
+    </match>
+  </rule>
+  
+  <rule weight="1.0">
+    <match lemma="gran" tags="adj.*">
+      <select lemma="big" tags="adj.*" />
+    </match>
+  </rule>
+  
+  <rule weight="1.0">
+    <or>    
+      <match lemma="volum" tags="n.*"/>
+      <match lemma="so" tags="n.*"/>
+      <match lemma="soroll" tags="n.*"/>
+    </or>
+    <match lemma="alt" tags="adj.*">
+      <select lemma="loud" tags="adj.*" />
+    </match>
+  </rule>
+  
+  <rule weight="1.0">
+    <match lemma="alt" tags="adj.*">
+      <select lemma="tall" tags="adj.*" />
+    </match>
+  </rule>
+  
+  <rule weight="1.0">
+    <or>    
+      <match lemma="volum" tags="n.*"/>
+      <match lemma="so" tags="n.*"/>
+      <match lemma="soroll" tags="n.*"/>
+    </or>
+    <match lemma="fort" tags="adj.*">
+      <select lemma="loud" tags="adj.*" />
+    </match>
+  </rule>
+  
+  <rule weight="1.0">
+    <match lemma="fort" tags="adj.*">
+      <select lemma="strong" tags="adj.*" />
+    </match>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="Fernão" tags="np.ant.m.sg">
+      <select lemma="Ferdinand" tags="np.ant.m.sg" />
+    </match>
+    <match lemma="de Magalhães" tags="np.cog.mf.sp"/>  
+  </rule>
+
+  <rule weight="0.8">
+    <match lemma="Fernão" tags="np.ant.m.sg">
+      <select lemma="Fernão" tags="np.ant.m.sg" />
+    </match>
+  </rule>
+
+  <rule weight="1.0">  
+    <match tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr">
+      <select lemma="to" tags="pr" />
+    </match>
+    <match tags="adv"/>
+    <match tags="vblex.inf"/>
+  </rule>
+
+  <rule weight="1.0">  
+    <match tags="vblex.pp.*"/>
+    <match lemma="a" tags="pr">
+      <select lemma="to" tags="pr" />
+    </match>
+    <match tags="vblex.inf"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*">
+      <select lemma="ask" tags="vblex.*" />
+    </match>
+    <or>    
+      <match tags="det.*"/>
+      <match tags="adj.*"/>
+      <match tags="num"/>
+      <match tags="num.*"/>
+    </or>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*">
+      <select lemma="ask" tags="vblex.*" />
+    </match>
+    <match lemma="pregunta" tags="n.*"/>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="fer" tags="vblex.*">
+      <select lemma="make" tags="vblex.*" />
+    </match>
+  </rule>
+
+  <rule weight="1.0">  
+    <match tags="vbser.*"/>
+    <match lemma="a" tags="pr">
+      <select lemma="in" tags="pr" />
+    </match>
+    <match tags="np.top"/>
+  </rule>
+
+  <rule weight="1.0">  
+    <match lemma="participar" tags="vblex.*"/>
+    <match lemma="en" tags="pr">
+      <select lemma="in" tags="pr" />
+    </match>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"/>
+    <or>
+      <match tags="vblex.*"/>
+      <match tags="vbhaver.*"/>
+      <match tags="vbser.*"/>
+    </or>
+    <match lemma="res" tags="prn.tn.nt">
+      <select lemma="anything" tags="prn.ind.*"/>
+    </match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"/>
+    <match lemma="anar" tags="vblex.*"/>
+    <or>
+      <match tags="vblex.inf"/>
+      <match tags="vbser.inf"/>
+    </or>
+    <match lemma="res" tags="prn.tn.nt">
+      <select lemma="anything" tags="prn.ind.*"/>
+    </match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="no" tags="adv"/>
+    <match lemma="haver" tags="vbhaver.*"/>
+    <or>
+      <match tags="vblex.pp.*"/>
+      <match tags="vbser.pp.*"/>
+      <match tags="vbhaver.pp.*"/>
+    </or>
+    <match lemma="res" tags="prn.tn.nt">
+      <select lemma="anything" tags="prn.ind.*"/>
+    </match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="res" tags="prn.tn.nt">
+      <select lemma="nothing" tags="prn.ind.*"/>
+    </match>
+  </rule>
+
+
+<!-- Traduccions de preposicions -->
+
+  <rule weight="1">
+    <match lemma="dret" tags="n.*"/>
+    <match lemma="a" tags="pr">
+      <select lemma="to" tags="pr" />
+    </match>
+  </rule>
+  
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+
