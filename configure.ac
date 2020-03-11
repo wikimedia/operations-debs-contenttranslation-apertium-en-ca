@@ -1,29 +1,26 @@
-#                                               -*- Autoconf -*-
-# Process this file with autoconf to produce a configure script.
-
-
 AC_PREREQ(2.52)
 
-m4_define([required_apertium_version], [3.1.0])
+AC_INIT([Apertium English-Catalan], [1.0.1], [apertium-stuff@lists.sourceforge.net], [apertium-eng-cat], [http://wiki.apertium.org/wiki/Apertium-eng-cat])
+AM_INIT_AUTOMAKE
 
-AC_INIT([apertium-en-ca], [0.9.3], [jimregan@users.sourceforge.net])
-AM_INIT_AUTOMAKE([apertium-en-ca], [0.9.3], no-define)
-AC_PROG_LN_S
 AC_PROG_AWK
-AC_CONFIG_HEADER([config])
 
+PKG_CHECK_MODULES(APERTIUM, apertium >= 3.6.0)
+PKG_CHECK_MODULES(LTTOOLBOX, lttoolbox >= 3.5.0)
+PKG_CHECK_MODULES(CG3, cg3 >= 1.3.0)
+PKG_CHECK_MODULES(APERTIUM_LEX_TOOLS, apertium-lex-tools >= 0.2.2)
+PKG_CHECK_MODULES(APERTIUM_SEPARABLE, apertium-separable >= 0.3.3)
+PKG_CHECK_MODULES(APERTIUM_ANAPHORA, apertium-anaphora >= 0.0.2)
 
-PKG_CHECK_MODULES(APERTIUM,   apertium >= required_apertium_version, [], [PKG_CHECK_MODULES(APERTIUM,   apertium-3.2 >= required_apertium_version)])
+AC_PATH_PROGS(ZCAT, [gzcat zcat], [false])
+AS_IF([test x$ZCAT = xfalse], [AC_MSG_ERROR([You don't have zcat nor gzcat installed])])
 
+m4_ifdef([AP_CHECK_LING],[],[AC_MSG_ERROR([AP_CHECK_LING not defined, is apertium.m4 in ACLOCAL_PATH? See: http://wiki.apertium.org/wiki/Installation_troubleshooting])])
 
-AC_PATH_PROG(XSLTPROC, xsltproc, no)
-if test x$ac_cv_path_XSLTPROC = x
-then
-  AC_MSG_ERROR([You don't have xsltproc installed.])
-fi
-if test x$ac_cv_path_XSLTPROC = xno
-then
-  AC_MSG_ERROR([You don't have xsltproc installed.])
-fi
-                     
-AC_OUTPUT([Makefile])
+AP_CHECK_LING([1], [apertium-eng], [0.1.0])
+AP_CHECK_LING([2], [apertium-cat], [2.8.0])
+
+AP_MKINCLUDE
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
